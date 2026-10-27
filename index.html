@@ -1,37 +1,172 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-            name="description"
-            content="Café Aurora: café de especialidad, postres y pastelería artesanal en Rionegro, Antioquia."
-        />
-        <title>Café Aurora | Un momento para disfrutar</title>
-        <!-- Recursos externos: tipografías, estilos y conjunto de iconos del sitio. -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
-            rel="stylesheet"
-        />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Café Aurora: café de especialidad, postres y pastelería artesanal en Rionegro, Antioquia."
+    />
+    <title>Café Aurora | Un momento para disfrutar</title>
+    <!-- Recursos externos: tipografías, estilos y conjunto de iconos del sitio. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- Bootstrap -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-            rel="stylesheet"
-        />
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/styles.css" />
-<body>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Encabezado: navbar-expand-lg adapta los enlaces a un menú móvil. -->
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+        <div class="container">
+          <a
+            class="navbar-brand"
+            href="#inicio"
+            aria-label="Café Aurora, ir al inicio"
+            ><img
+              src="img/logo-principal.png"
+              alt="Logo de Café Aurora: café, postres y pastelería"
+              class="logo-principal"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- El botón móvil controla este bloque mediante el id menuPrincipal. -->
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav mx-auto my-3 my-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#esencia">Nuestra historia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menu">Menú</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#favoritos">Favoritos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Visítanos</a>
+              </li>
+            </ul>
+            <a class="btn btn-cafe btn-sm px-4" href="#menu">Explorar menú</a>
+          </div>
+        </div>
+      </nav>
+    </header>
 
+    <main>
+      <!-- Sección 1: presentación del café y acceso directo al menú. -->
+      <!-- El id permite llegar a esta sección desde los enlaces internos del sitio. -->
+      <section class="hero" id="inicio">
+        <div class="container">
+          <!-- La cuadrícula de Bootstrap pone el texto y la foto en columnas. -->
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5 hero-copy">
+              <p class="eyebrow">CAFÉ · POSTRES · PASTELERÍA</p>
+              <h1>Un momento<br /><span>para disfrutar.</span></h1>
+              <p class="hero-text">
+                Café de especialidad, postres artesanales y sabores que
+                convierten cualquier momento en algo especial.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-cafe" href="#menu"
+                  >Descubrir el menú <span aria-hidden="true">↗</span></a
+                ><a class="btn btn-outline-cafe" href="#esencia"
+                  >Conoce nuestra historia</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <!-- La imagen principal no usa carga diferida porque aparece al inicio. -->
+              <img
+                src="img/hero-cafe.jpg"
+                class="hero-image"
+                alt="Café con latte art y croissant en una mesa de madera dentro de una cafetería luminosa"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-    
+      <!-- Sección 2: historia breve y valores de Café Aurora. -->
+      <section class="section-pad essence" id="esencia">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <!-- loading="lazy" deja que el navegador cargue la foto al acercarse a ella. -->
+              <img
+                src="img/nuestra-esencia.jpg"
+                class="essence-photo"
+                alt="Barista preparando un café con leche en la barra"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-6 essence-copy">
+              <p class="eyebrow">UN LUGAR PARA QUEDARSE</p>
+              <h2>Nuestra historia</h2>
+              <p class="lead-copy">
+                Café Aurora nació de una idea sencilla: crear un lugar donde el
+                aroma del café recién molido invitara a bajar el ritmo. En una
+                pequeña barra de Rionegro empezamos a compartir recetas de la
+                familia, panes recién horneados y conversaciones sin afán.
+              </p>
+              <p>
+                Hoy seguimos preparando café, postres y pastelería artesanal con
+                ingredientes seleccionados, para que cada visita se sienta como
+                volver a un lugar querido.
+              </p>
+              <!-- Los tres valores comparten clases para conservar su alineación. -->
+              <div class="values row g-3 mt-3">
+                <div class="col-sm-4">
+                  <i class="bi bi-cup-hot value-icon" aria-hidden="true"></i
+                  ><strong>Café de calidad</strong>
+                </div>
+                <div class="col-sm-4">
+                  <i
+                    class="bi bi-hand-thumbs-up value-icon"
+                    aria-hidden="true"
+                  ></i
+                  ><strong>Preparación artesanal</strong>
+                </div>
+                <div class="col-sm-4">
+                  <i
+                    class="bi bi-check2-circle value-icon"
+                    aria-hidden="true"
+                  ></i
+                  ><strong>Ingredientes seleccionados</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Bootstrap controla el menú móvil; el archivo propio agrega filtros y enlaces de WhatsApp. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
