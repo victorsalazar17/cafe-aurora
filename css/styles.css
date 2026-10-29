@@ -1,0 +1,221 @@
+/* Variables de color para reutilizar la paleta en toda la página. */
+:root {
+    --crema: #faf7f2;
+    --cafe: #4b3027;
+    --cafe-claro: #a47551;
+    --beige: #e8d8c3;
+    --texto: #292522;
+    --borde: #e9dfd3;
+    --sombra: 0 12px 32px rgba(75, 48, 39, 0.08);
+}
+* {
+  /* El ancho incluye el relleno y el borde de cada elemento. */
+    box-sizing: border-box;
+}
+/* El desplazamiento suave acompaña los enlaces que llevan a secciones internas. */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+body {
+    margin: 0;
+    background: var(--crema);
+    color: var(--texto);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+}
+h1,
+h2,
+h3,
+h4,
+.footer-brand {
+    font-family: "Playfair Display", serif;
+    color: var(--cafe);
+    font-weight: 600;
+    line-height: 1.15;
+}
+h2 {
+  /* Ajusta el tamaño del subtítulo de forma gradual según la pantalla. */
+    font-size: clamp(2.15rem, 4vw, 3rem);
+}
+p {
+    color: #6b625b;
+}
+.section-pad {
+  /* Mantiene una separación vertical similar entre secciones. */
+    padding: 100px 0;
+}
+.eyebrow {
+    color: var(--cafe-claro);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.19em;
+    margin-bottom: 14px;
+}
+.btn {
+  /* Estilo común para los botones principales. */
+    border-radius: 3px;
+    font-size: 0.83rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    transition:
+        transform 0.22s ease,
+        background-color 0.22s ease,
+        color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+.btn:hover {
+    /* Pequeña elevación compartida por los botones del sitio. */
+    transform: translateY(-2px);
+}
+.btn-cafe {
+    background: var(--cafe);
+    border: 1px solid var(--cafe);
+    color: white;
+}
+.btn-cafe:hover,
+.btn-cafe:focus {
+    /* El estado hover y el foco usan el mismo tratamiento visual. */
+    background: #654438;
+    border-color: #654438;
+    color: #fff;
+    box-shadow: 0 6px 16px #4b30272b;
+}
+.btn-outline-cafe {
+    border: 1px solid #b7a797;
+    color: var(--cafe);
+    background: transparent;
+}
+.btn-outline-cafe:hover {
+    border-color: var(--cafe);
+    background: var(--cafe);
+    color: white;
+}
+
+/* Encabezado y logo: el ancho fijo más height:auto conserva la proporción. */
+.site-header {
+    /* z-index mantiene el encabezado por encima del contenido al desplazarse. */
+    background: rgba(250, 247, 242, 0.96);
+    border-bottom: 1px solid rgba(75, 48, 39, 0.08);
+    position: relative;
+    z-index: 10;
+}
+.navbar {
+    padding: 8px 0;
+}
+.navbar-brand {
+    padding: 0;
+}
+.logo-principal {
+    display: block;
+    width: 92px;
+    height: auto;
+    border-radius: 50%;
+}
+.navbar-nav {
+    gap: 10px;
+}
+.nav-link {
+    color: #51463e !important;
+    font-size: 0.83rem;
+    padding: 10px 12px !important;
+    transition: color 0.2s ease;
+}
+.nav-link:hover,
+.nav-link:focus {
+  /* El color de énfasis también se ve al navegar con el teclado. */
+    color: var(--cafe-claro) !important;
+}
+.navbar-toggler {
+    border-color: #d9cabb;
+    padding: 7px 9px;
+}
+.navbar-toggler:focus {
+    /* Indicador visible para quien recorre el menú con el teclado. */
+    box-shadow: 0 0 0 0.18rem #a4755140;
+}
+
+/* Inicio: texto junto a una fotografía amplia con texto legible. */
+.hero {
+    padding: 60px 0 82px;
+    background: #f3ede4;
+}
+.hero-copy {
+    /* Separa ligeramente el texto del borde superior de la imagen. */
+    padding-top: 14px;
+}
+.hero h1 {
+  /* clamp() establece un tamaño mínimo y máximo sin saltos bruscos. */
+    font-size: clamp(3rem, 5.7vw, 5rem);
+    letter-spacing: -0.04em;
+    margin: 0 0 22px;
+}
+.hero h1 span {
+    color: var(--cafe-claro);
+    font-style: italic;
+}
+.hero-text {
+    font-size: 1rem;
+    max-width: 445px;
+    line-height: 1.9;
+}
+.hero-image,
+.essence-photo,
+.product-photo img,
+.favorite-card img {
+  /* Estas imágenes comparten reglas para ocupar el ancho de su contenedor. */
+    display: block;
+    width: 100%;
+  /* Recorta el sobrante para llenar el espacio sin deformar la foto. */
+    object-fit: cover;
+    object-position: center;
+}
+.hero-image {
+  /* Define una foto panorámica y centra el recorte alrededor de la taza. */
+    height: 470px;
+    object-position: center 57%;
+    box-shadow: var(--sombra);
+    border-radius: 18px;
+}
+
+/* historia  */
+.essence {
+    background: var(--crema);
+}
+.essence-photo {
+    height: 410px;
+    border-radius: 18px;
+}
+.essence-copy h2 {
+    margin-bottom: 22px;
+}
+.lead-copy {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #4f4741;
+}
+.essence-copy > p:not(.eyebrow) {
+    /* El selector :not deja el rótulo eyebrow con su estilo propio. */
+    font-size: 0.9rem;
+}
+.values {
+  /* Separa visualmente la lista de valores del texto de historia. */
+    border-top: 1px solid var(--borde);
+    padding-top: 23px;
+}
+.values > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.value-icon {
+    font-size: 1.15rem;
+    color: var(--cafe-claro);
+    line-height: 1;
+}
+.values strong {
+    font-size: 0.73rem;
+    font-weight: 500;
+    color: var(--cafe);
+}
