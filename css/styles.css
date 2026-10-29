@@ -219,3 +219,245 @@ p {
     font-weight: 500;
     color: var(--cafe);
 }
+
+/* Menú: tarjetas uniformes y filtros accesibles */
+.menu-section {
+    background: #f3ede4;
+}
+.section-heading {
+    /* Centra el encabezado y evita que sus párrafos se extiendan demasiado. */
+    max-width: 660px;
+    margin: 0 auto 30px;
+}
+.section-heading h2 {
+    margin-bottom: 14px;
+}
+.section-heading > p:last-child {
+    font-size: 0.9rem;
+}
+.filter-list {
+  /* Los botones se acomodan en varias filas cuando falta espacio. */
+    margin: 30px 0 12px;
+}
+.filter-btn {
+  /* Son botones reales: funcionan con clic y también con teclado. */
+    border: 1px solid #d9cbbc;
+    background: transparent;
+    color: #635950;
+    padding: 8px 17px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 0.78rem;
+    transition: all 0.2s ease;
+}
+.filter-btn span {
+    font-size: 0.67rem;
+    color: #a08b78;
+    margin-left: 4px;
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--cafe);
+    border-color: var(--cafe);
+    color: #fff;
+}
+.filter-btn.active span,
+.filter-btn:hover span {
+    /* Aclara el contador para que contraste sobre el botón seleccionado. */
+    color: #e9d8c7;
+}
+.filter-btn:focus-visible,
+.btn-whatsapp:focus-visible {
+  /* El contorno ayuda a localizar estos controles al usar el teclado. */
+    outline: 3px solid #58765d66;
+    outline-offset: 3px;
+}
+.product-card {
+  /* Las tarjetas ocupan la misma altura dentro de cada fila. */
+    height: 100%;
+    background: #fff;
+    border: 1px solid rgba(75, 48, 39, 0.06);
+    box-shadow: 0 4px 16px rgba(75, 48, 39, 0.035);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    overflow: hidden;
+    border-radius: 14px;
+}
+/* El movimiento leve indica que una tarjeta está bajo el cursor. */
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(75, 48, 39, 0.12);
+}
+.product-photo {
+  /* Limita la altura de la foto y sirve de referencia para la etiqueta. */
+    height: 225px;
+    overflow: hidden;
+    position: relative;
+    background: var(--beige);
+    border-radius: 14px 14px 0 0;
+}
+.product-photo img {
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.producto-item[data-category="cafe"] .product-photo img[src*="espresso"] {
+    object-position: center 53%;
+}
+.product-card:hover .product-photo img {
+    /* El zoom ocurre solo en la imagen cuando el cursor está sobre su tarjeta. */
+    transform: scale(1.04);
+}
+.category-tag {
+  /* Ubica la categoría dentro de la esquina superior izquierda de la foto. */
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background: #faf7f2ef;
+    color: var(--cafe);
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    letter-spacing: 0.03em;
+}
+.product-info {
+    padding: 18px 18px 17px;
+}
+.product-info h3 {
+  /* Iguala el espacio de los títulos aunque algunos nombres tengan dos líneas. */
+    font-size: 1.2rem;
+    min-height: 2.55rem;
+    margin: 0 0 7px;
+}
+.product-info > p {
+    /* La altura mínima iguala el espacio antes del precio entre tarjetas. */
+    font-size: 0.76rem;
+    line-height: 1.6;
+    min-height: 2.5rem;
+    margin: 0 0 15px;
+}
+.product-bottom {
+  /* Flex separa el precio y el botón en los extremos de la fila. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #f0e9e1;
+    padding-top: 12px;
+}
+.product-bottom strong {
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+    color: var(--cafe);
+}
+.btn-whatsapp {
+  /* Flex alinea el icono y el texto dentro del botón. */
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 40px;
+    border: 1px solid #58765d;
+    border-radius: 24px;
+    background: #58765d;
+    color: #fff;
+    padding: 9px 15px;
+    font:
+        500 0.78rem "Poppins",
+        sans-serif;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+.btn-whatsapp:hover {
+    /* Cambia el fondo y eleva el botón al pasar el cursor. */
+    background: #426348;
+    color: var(--cafe);
+    transform: translateY(-1px);
+}
+.btn-whatsapp .bi {
+    font-size: 0.95rem;
+}
+.producto-item[hidden] {
+  /* JavaScript activa hidden para ocultar productos que no coinciden. */
+    display: none !important;
+}
+
+/* Favoritos de la casa */
+.favorites {
+    background: var(--crema);
+}
+.favorite-card {
+  /* Sirve de referencia para ubicar texto y degradado sobre la foto. */
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    background: var(--beige);
+    border-radius: 16px;
+}
+.favorite-card:after {
+  /* El degradado ayuda a leer el texto blanco sobre la fotografía. */
+  /* after crea la capa decorativa sin añadir otro elemento al HTML. */
+    content: "";
+    position: absolute;
+    inset: 35% 0 0;
+    background: linear-gradient(transparent, rgba(35, 24, 18, 0.78));
+}
+.favorite-card img {
+    height: 100%;
+    transition: transform 0.35s ease;
+}
+.favorite-card:hover img {
+    /* Efecto de acercamiento que coincide con el de las tarjetas del menú. */
+    transform: scale(1.035);
+}
+.favorite-card > div {
+  /* Coloca el nombre del favorito encima de la foto y el degradado. */
+    position: absolute;
+    z-index: 1;
+    left: 24px;
+    right: 18px;
+    bottom: 20px;
+    color: #fff;
+}
+.favorite-card span {
+    font-size: 0.69rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #f0dfcc;
+}
+.favorite-card h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 5px 0 0;
+}
+
+/* Testimonios ficticios */
+.testimonials {
+    /* Fondo distinto para separar visualmente las opiniones del resto. */
+    background: #efe5d9;
+}
+.demo-label {
+    font-size: 0.73rem;
+    font-style: italic;
+    color: #84776b;
+}
+.quote-card {
+  /* blockquote comunica que el contenido es una opinión citada. */
+    height: 100%;
+    background: var(--crema);
+    padding: 30px;
+    margin: 0;
+    border: 1px solid #e5d8c8;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(75, 48, 39, 0.045);
+}
+.quote-card > p {
+    font-size: 0.85rem;
+    line-height: 1.85;
+    min-height: 90px;
+    margin: 12px 0 18px;
+}
+.quote-card footer {
+    font-size: 0.8rem;
+    color: var(--cafe);
+    font-weight: 500;
+}
