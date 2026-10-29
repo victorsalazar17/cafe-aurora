@@ -461,3 +461,313 @@ p {
     color: var(--cafe);
     font-weight: 500;
 }
+/* Contacto: datos de visita, WhatsApp y redes sociales */
+.contact-section {
+    background: #f1e9df;
+}
+.contact-section h2 {
+    font-size: clamp(2.4rem, 4.2vw, 3.45rem);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+.contact-intro {
+    max-width: 410px;
+    margin-bottom: 27px;
+    color: #655b53;
+    font-size: 0.96rem;
+    line-height: 1.9;
+}
+.contact-whatsapp {
+    min-height: 48px;
+    padding: 13px 20px;
+    border-radius: 4px;
+    font-size: 0.84rem;
+}
+.contact-card {
+    padding: 34px 38px;
+    background: #fff;
+    border: 1px solid #e8ddd0;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(75, 48, 39, 0.07);
+}
+.contact-card-title {
+    margin: 0 0 20px;
+    color: var(--cafe);
+    font-family: "Playfair Display", serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+.contact-card .contact-detail {
+    gap: 16px;
+    margin: 0;
+    padding: 17px 0;
+    border-bottom: 1px solid #efe8e0;
+}
+.contact-card .contact-detail:last-of-type {
+    border-bottom: 0;
+}
+.contact-card .detail-icon {
+  /* El espacio fijo del icono mantiene alineado el texto de contacto. */
+    display: flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    background: #f4eee6;
+    color: var(--cafe-claro);
+    font-size: 1.05rem;
+}
+.contact-card .contact-detail strong {
+    font-size: 0.84rem;
+}
+.contact-card .contact-detail p {
+    margin-top: 4px;
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+.social-links {
+    margin-top: 13px;
+    padding-top: 19px;
+    border-top: 1px solid #efe8e0;
+    font-size: 0.77rem;
+}
+.social-links .social-title {
+    margin-bottom: 3px;
+    color: var(--cafe);
+    font-size: 0.79rem;
+}
+.social-links a {
+  /* Cada red se presenta como un enlace con forma de botón. */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #e8ddd0;
+    border-radius: 24px;
+    color: var(--cafe);
+    font-size: 0.74rem;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+.social-links a:hover {
+    background: #f5efe8;
+    border-color: #cdb69e;
+}
+.social-links a i {
+    color: var(--cafe-claro);
+    font-size: 0.9rem;
+}
+.contact-section .row {
+    /* Centra las columnas de contacto dentro de la cuadrícula. */
+    justify-content: center;
+}
+.toast-message {
+  /* El aviso permanece fijo sobre la página y aparece con la clase show. */
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translate(-50%, 20px);
+    opacity: 0;
+    pointer-events: none;
+    background: var(--cafe);
+    color: white;
+    padding: 11px 18px;
+    z-index: 30;
+    font-size: 0.78rem;
+    box-shadow: var(--sombra);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+.toast-message.show {
+  /* La clase show activa la transición desde el estado oculto. */
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Pie de página */
+.site-footer {
+    background: #3e2b24;
+    color: #f6eee5;
+    padding: 47px 0 18px;
+}
+.footer-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.55rem;
+}
+.site-footer p {
+    color: #d6c9bd;
+    font-size: 0.78rem;
+    margin: 5px 0 0;
+}
+.footer-nav {
+  /* Los enlaces pueden pasar a otra línea si falta espacio. */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 19px;
+    justify-content: center;
+}
+.footer-nav a,
+.footer-hours a {
+    color: #e7d8c9;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+.footer-nav a:hover,
+.footer-hours a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.footer-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: 0.75rem;
+}
+.footer-hours strong {
+    font-weight: 500;
+}
+.footer-hours span {
+    color: #d6c9bd;
+}
+.footer-bottom {
+    /* Separa el crédito y el enlace de regreso al inicio. */
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid #ffffff25;
+    margin-top: 35px;
+    padding-top: 15px;
+    color: #d6c9bd;
+    font-size: 0.68rem;
+}
+.footer-bottom a {
+    color: #e7d8c9;
+    text-decoration: none;
+}
+
+/* Ajustes para pantallas pequeñas y preferencia de movimiento reducido */
+@media (max-width: 991.98px) {
+  /* En pantallas medianas se ajustan espacios y alineaciones. */
+    .navbar-collapse {
+        padding: 8px 0 15px;
+    }
+    .navbar-nav {
+        gap: 0;
+    }
+    .hero {
+        padding: 42px 0 65px;
+    }
+    .hero-image {
+        height: 390px;
+    }
+    .section-pad {
+        padding: 76px 0;
+    }
+    .essence-photo {
+        height: 360px;
+    }
+    .contact-copy {
+        margin-bottom: 4px;
+    }
+    .contact-card {
+        padding: 28px;
+    }
+    .footer-hours {
+        align-items: flex-start;
+    }
+    .footer-nav {
+        justify-content: flex-start;
+    }
+}
+@media (max-width: 575.98px) {
+  /* Ajustes específicos para celulares. */
+    /* Se reducen alturas y espacios para aprovechar mejor una pantalla angosta. */
+    body {
+        font-size: 14px;
+    }
+    .logo-principal {
+        width: 78px;
+    }
+    .hero {
+        padding: 36px 0 56px;
+    }
+    .hero h1 {
+        font-size: 3.15rem;
+    }
+    .hero-image {
+        height: 280px;
+    }
+    .section-pad {
+        padding: 62px 0;
+    }
+    .essence-photo {
+        height: 285px;
+    }
+    .values > div {
+        align-items: center;
+        text-align: center;
+    }
+    .product-photo {
+        height: 235px;
+    }
+    .product-info h3 {
+        font-size: 1.16rem;
+    }
+    .favorite-card {
+        height: 315px;
+    }
+    .product-bottom strong {
+        font-size: 1.02rem;
+    }
+    .btn-whatsapp {
+        padding: 9px 12px;
+        font-size: 0.76rem;
+    }
+    .quote-card {
+        padding: 24px;
+    }
+    .contact-card {
+        padding: 23px 20px;
+        border-radius: 13px;
+    }
+    .contact-copy h2 {
+        font-size: 2.55rem;
+    }
+    .contact-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
+    .social-links a {
+        padding: 8px 10px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .filter-btn {
+        padding: 8px 13px;
+        font-size: 0.73rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Respeta la preferencia del dispositivo para reducir las animaciones. */
+    html {
+        scroll-behavior: auto;
+    }
+  *,
+  *::before,
+  *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
